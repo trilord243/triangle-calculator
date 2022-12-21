@@ -22,7 +22,13 @@ function Altura() {
           (semiPerimetro - lado2) *
           (semiPerimetro - base)
       );
-    return altura.toFixed(2);
+    const resultado = altura.toFixed(2);
+
+    if (resultado == 0 || resultado === "NaN") {
+      return <p className="text-red-500">Resultado invalido</p>;
+    } else {
+      return <p className="text-green-400">El resultado es {resultado}</p>;
+    }
   };
 
   return (
@@ -88,11 +94,7 @@ function Altura() {
               {" "}
               Calcular
             </button>
-            {state.resultado ? (
-              <p className="bg-blue-400 w-20 text-center"> {calcularArea()} </p>
-            ) : (
-              <p className="bg-blue-400 w-20"></p>
-            )}
+            {state.resultado ? calcularArea() : <p className=" w-20"></p>}
           </div>
         </section>
         <hr />

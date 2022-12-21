@@ -9,10 +9,10 @@ function Menu() {
           <nav className="w-full h-1/5 flex items-center bg-gradient-to-r from-cyan-500 to-blue-500">
             <ul className="flex flex-auto justify-center mt-3  p-2   ">
               <li className="mx-8 ">
-                <NavLink>Calculos triangulos</NavLink>
+                <NavLink to="/">Calculos triangulos</NavLink>
               </li>
               <li className="mx-8">
-                <NavLink> Porcentajes</NavLink>
+                <NavLink to="porcentajes"> Porcentajes</NavLink>
               </li>
               <li className="mx-8">
                 <NavLink> Otros calculos</NavLink>

@@ -10,7 +10,16 @@ function HomePage() {
   });
 
   const calcularArea = () => {
-    return (state.altura * state.base) / 2;
+    const area = (state.altura * state.base) / 2;
+    return area ? (
+      <p className="text-lime-600 w-auto text-center rounded-2xl">
+        el area es {area}
+      </p>
+    ) : (
+      <p className="text-red-600 w-auto text-center rounded-2xl">
+        Resultado invalido
+      </p>
+    );
   };
   return (
     <>
@@ -69,14 +78,10 @@ function HomePage() {
               {" "}
               Calcular
             </button>
-            {state.resultado ? (
-              <p className="bg-blue-400 w-20 text-center"> {calcularArea()} </p>
-            ) : (
-              <p className="bg-blue-400 w-20"></p>
-            )}
+            {state.resultado ? calcularArea() : <p className=" w-20"> </p>}
           </div>
         </section>
-        <hr />
+        <hr className="mt-2" />
       </main>
       <Altura />
     </>
